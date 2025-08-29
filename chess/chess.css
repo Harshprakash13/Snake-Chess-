@@ -1,0 +1,336 @@
+:root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --accent: #1e88e5;
+    --muted: #6b7280;
+    --light-square: #f0d9b5;
+    --dark-square: #b58863;
+    --highlight: #ffd54f;
+    --legal: #9be7ff;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #eef6ff, #f4f6fb);
+    font-family: Inter, Segoe UI, Roboto, Arial;
+    color: #111
+}
+
+.app {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 18px
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px
+}
+
+header h1 {
+    margin: 0;
+    color: var(--accent)
+}
+
+.controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px
+}
+
+.controls-left,
+.controls-right {
+    display: flex;
+    gap: 8px;
+    align-items: center
+}
+
+.control {
+    background: var(--card);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(17, 24, 39, 0.04)
+}
+
+.control:disabled {
+    opacity: .5;
+    cursor: not-allowed
+}
+
+select {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08)
+}
+
+.main {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 64px);
+    grid-template-rows: repeat(8, 64px);
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 6px solid rgba(0, 0, 0, 0.06);
+    background: var(--card)
+}
+
+.square {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    user-select: none;
+    cursor: pointer;
+    position: relative
+}
+
+.square.light {
+    background: var(--light-square)
+}
+
+.square.dark {
+    background: var(--dark-square)
+}
+
+.square.selected {
+    outline: 3px solid var(--highlight);
+    z-index: 2
+}
+
+.square.legal::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.status-area {
+    max-width: 320px;
+    margin-left: 8px;
+    text-align: left
+}
+
+.status {
+    background: linear-gradient(90deg, #fff, #fafafa);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    font-weight: 600
+}
+
+.info {
+    margin-top: 8px;
+    color: var(--muted)
+}
+
+.moves {
+    margin-top: 14px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(17, 24, 39, 0.03)
+}
+
+.moves ol {
+    padding-left: 18px;
+    margin: 0
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: .9rem
+}
+
+@media (max-width:900px) {
+    .board {
+        transform: scale(0.9)
+    }
+}
+
+@media (max-width:640px) {
+  .board {
+    grid-template-columns: repeat(8, 44px);
+    grid-template-rows: repeat(8, 44px)
+  }
+
+  .square {
+    font-size: 20px
+  }
+}
+
+/* Media Queries for Android Phones */
+@media (max-width: 480px) {
+  .app {
+    padding: 12px;
+    margin: 10px auto;
+  }
+  
+  header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .controls-row {
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .controls-left, .controls-right {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .board {
+    grid-template-columns: repeat(8, 36px);
+    grid-template-rows: repeat(8, 36px);
+    transform: scale(0.8);
+    margin: 0 auto;
+  }
+  
+  .square {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .main {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .status-area {
+    max-width: 280px;
+    margin-left: 0;
+    text-align: center;
+  }
+  
+  .moves {
+    margin-top: 10px;
+    padding: 8px;
+  }
+  
+  footer {
+    margin-top: 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .board {
+    grid-template-columns: repeat(8, 32px);
+    grid-template-rows: repeat(8, 32px);
+    transform: scale(0.7);
+  }
+  
+  .square {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  
+  header h1 {
+    font-size: 1.4rem;
+  }
+  
+  .control {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+  
+  select {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape orientation for phones */
+@media (max-height: 480px) and (orientation: landscape) {
+  .app {
+    padding: 8px;
+    margin: 5px auto;
+  }
+  
+  .main {
+    flex-direction: row;
+    gap: 8px;
+  }
+  
+  .board {
+    transform: scale(0.7);
+  }
+  
+  .status-area {
+    max-width: 200px;
+  }
+  
+  .moves {
+    max-height: 120px;
+    overflow-y: auto;
+  }
+  
+  .controls-row {
+    flex-direction: row;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 320px) {
+  .board {
+    grid-template-columns: repeat(8, 30px);
+    grid-template-rows: repeat(8, 30px);
+    transform: scale(0.65);
+  }
+  
+  .square {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+  
+  header h1 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .square {
+    cursor: default;
+  }
+  
+  .control {
+    min-height: 36px;
+  }
+  
+  select {
+    min-height: 32px;
+  }
+}

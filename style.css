@@ -1,0 +1,255 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  text-align: center;
+}
+
+.container {
+  background: rgba(0,0,0,0.4);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.btn:hover {
+  background: #ffdd57;
+  transform: scale(1.05);
+}
+
+/* Mobile-First Design for Starting Page */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+    height: auto;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 25px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    color: #333;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4a5568;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 18px 25px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 280px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 172, 254, 0.4);
+  }
+  
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(79, 172, 254, 0.3);
+  }
+  
+  /* Snake button specific styling */
+  .btn:nth-child(1) {
+    background: linear-gradient(135deg, #48bb78, #38a169);
+    box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+  }
+  
+  .btn:nth-child(1):hover {
+    background: linear-gradient(135deg, #38a169, #48bb78);
+    box-shadow: 0 8px 20px rgba(72, 187, 120, 0.4);
+  }
+  
+  /* Chess button specific styling */
+  .btn:nth-child(2) {
+    background: linear-gradient(135deg, #805ad5, #6b46c1);
+    box-shadow: 0 5px 15px rgba(128, 90, 213, 0.3);
+  }
+  
+  .btn:nth-child(2):hover {
+    background: linear-gradient(135deg, #6b46c1, #805ad5);
+    box-shadow: 0 8px 20px rgba(128, 90, 213, 0.4);
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .container {
+    padding: 20px 15px;
+    max-width: 300px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn {
+    padding: 16px 20px;
+    font-size: 1rem;
+    max-width: 250px;
+  }
+}
+
+/* Landscape orientation for phones */
+@media (max-height: 480px) and (orientation: landscape) {
+  body {
+    padding: 10px;
+    justify-content: flex-start;
+  }
+  
+  .container {
+    padding: 20px;
+    margin: 20px 0;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+  
+  p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .btn {
+    width: auto;
+    min-width: 140px;
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 769px) {
+  /* Keep original desktop styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: #fff;
+    text-align: center;
+  }
+  
+  .container {
+    background: rgba(0,0,0,0.4);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 12px;
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #ffdd57;
+    transform: scale(1.05);
+  }
+}

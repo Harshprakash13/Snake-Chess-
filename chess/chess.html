@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Chess From Scratch — Play vs AI</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="chess.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>♟ Chess </h1>
+    </header>
+
+    <section class="controls-row">
+      <div class="controls-left">
+        <button id="resetBtn" class="control">Reset</button>
+        <button id="undoBtn" class="control">Undo</button>
+        <button id="flipBtn" class="control">Flip</button>
+      </div>
+      <div class="controls-right">
+        <label for="difficulty">Difficulty:</label>
+        <select id="difficulty" aria-label="AI difficulty">
+          <option value="easy">Easy (random)</option>
+          <option value="medium" selected>Medium (depth 2)</option>
+          <option value="hard">Hard (depth 3)</option>
+        </select>
+        <label style="margin-left:12px"><input type="checkbox" id="askPromotion"> Ask on promotion</label>
+      </div>
+    </section>
+
+    <main class="main">
+      <div id="board" class="board"></div>
+      <div class="status-area">
+        <div id="status" class="status">Status: Ready</div>
+        <div id="info" class="info">You play <strong>White</strong>. AI plays Black.</div>
+        <div class="moves">
+          <h3>Moves</h3>
+          <ol id="moveList"></ol>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <small>Engine: basic minimax (alpha-beta). Rules implemented from scratch (castling, en-passant, promotion).</small>
+    </footer>
+  </div>
+
+  <script src="chess.js"></script>
+</body>
+</html>
